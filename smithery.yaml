@@ -1,0 +1,10 @@
+name: encoder-ai-mcp
+description: "MEOK AI Labs — encoder-ai-mcp"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/encoder-ai-mcp
+license: MIT
+categories: [Utilities, Data Processing]
+tags: [encoding, base64, url-encoding, character-encoding, data-encoding]
+runtime: python
+entrypoint: server.py
