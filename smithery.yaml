@@ -1,10 +1,34 @@
 name: encoder-ai-mcp
-description: "MEOK AI Labs — encoder-ai-mcp"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/encoder-ai-mcp
-license: MIT
-categories: [Utilities, Data Processing]
-tags: [encoding, base64, url-encoding, character-encoding, data-encoding]
-runtime: python
-entrypoint: server.py
+description: "encoder-ai-mcp \u2014 Built by [MEOK AI Labs](https://meok.ai)"
+version: 1.0.0
+tools:
+- name: encode_base64
+  description: Encode text to Base64.
+  parameters:
+  - name: text
+    type: string
+    required: true
+- name: decode_base64
+  description: Decode Base64 to text.
+  parameters:
+  - name: encoded
+    type: string
+    required: true
+- name: encode_url
+  description: URL-encode a string.
+  parameters:
+  - name: text
+    type: string
+    required: true
+- name: encode_html
+  description: HTML-encode special characters.
+  parameters:
+  - name: text
+    type: string
+    required: true
+- name: to_hex
+  description: Convert text to hexadecimal.
+  parameters:
+  - name: text
+    type: string
+    required: true

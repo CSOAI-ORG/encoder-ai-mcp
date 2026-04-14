@@ -1,20 +1,82 @@
 {
   "name": "encoder-ai-mcp",
-  "description": "MEOK AI Labs \u2014 encoder-ai-mcp",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/encoder-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "encoder-ai-mcp \u2014 Built by [MEOK AI Labs](https://meok.ai)",
+  "version": "1.0.0",
   "tools": [
-    "run"
-  ],
-  "categories": [
-    "Utilities",
-    "Data Processing"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "encode_base64",
+      "description": "Encode text to Base64.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "decode_base64",
+      "description": "Decode Base64 to text.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "encoded": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "encoded"
+        ]
+      }
+    },
+    {
+      "name": "encode_url",
+      "description": "URL-encode a string.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "encode_html",
+      "description": "HTML-encode special characters.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "to_hex",
+      "description": "Convert text to hexadecimal.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    }
+  ]
 }

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Encoding and decoding — Base64, URL, HTML, hex, binary. — MEOK AI Labs."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json, os, re, hashlib, math
 from datetime import datetime, timezone
 from typing import Optional
@@ -18,18 +23,26 @@ mcp = FastMCP("encoder-ai", instructions="MEOK AI Labs — Encoding and decoding
 
 
 @mcp.tool()
-def encode_base64(text: str) -> str:
+def encode_base64(text: str, api_key: str = "") -> str:
     """Encode text to Base64."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     # Real implementation
     result = {"tool": "encode_base64", "input_length": len(str(locals())), "timestamp": datetime.now(timezone.utc).isoformat()}
     import base64
     result["encoded"] = base64.b64encode(text.encode()).decode()
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def decode_base64(encoded: str) -> str:
+def decode_base64(encoded: str, api_key: str = "") -> str:
     """Decode Base64 to text."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     # Real implementation
     result = {"tool": "decode_base64", "input_length": len(str(locals())), "timestamp": datetime.now(timezone.utc).isoformat()}
@@ -37,38 +50,50 @@ def decode_base64(encoded: str) -> str:
     try:
         result["decoded"] = base64.b64decode(encoded.encode()).decode()
     except: result["error"] = "Invalid base64"
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def encode_url(text: str) -> str:
+def encode_url(text: str, api_key: str = "") -> str:
     """URL-encode a string."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     # Real implementation
     result = {"tool": "encode_url", "input_length": len(str(locals())), "timestamp": datetime.now(timezone.utc).isoformat()}
     import base64
     from urllib.parse import quote
     result["encoded"] = quote(text)
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def encode_html(text: str) -> str:
+def encode_html(text: str, api_key: str = "") -> str:
     """HTML-encode special characters."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     # Real implementation
     result = {"tool": "encode_html", "input_length": len(str(locals())), "timestamp": datetime.now(timezone.utc).isoformat()}
     import base64
     import html as h
     result["encoded"] = h.escape(text)
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def to_hex(text: str) -> str:
+def to_hex(text: str, api_key: str = "") -> str:
     """Convert text to hexadecimal."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     # Real implementation
     result = {"tool": "to_hex", "input_length": len(str(locals())), "timestamp": datetime.now(timezone.utc).isoformat()}
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 
 if __name__ == "__main__":
