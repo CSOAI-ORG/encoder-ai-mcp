@@ -1,0 +1,57 @@
+{
+  "name": "encoder-ai",
+  "description": "MEOK AI Labs \u2014 Encoding and decoding \u2014 Base64, URL, HTML, hex, binary.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/encoder-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "encode_base64",
+      "description": "Encode text to Base64."
+    },
+    {
+      "name": "decode_base64",
+      "description": "Decode Base64 to text."
+    },
+    {
+      "name": "encode_url",
+      "description": "URL-encode a string."
+    },
+    {
+      "name": "encode_html",
+      "description": "HTML-encode special characters."
+    },
+    {
+      "name": "to_hex",
+      "description": "Convert text to hexadecimal."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Developer Tools"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
