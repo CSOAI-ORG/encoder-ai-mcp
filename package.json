@@ -1,1 +1,11 @@
-{"name":"encoder-ai-mcp","version":"1.0.0","description":"MEOK AI Labs MCP","author":"MEOK AI Labs","license":"MIT","repository":{"type":"git","url":"https://github.com/CSOAI-ORG/encoder-ai-mcp"}}
+{
+  "name": "encoder-ai-mcp",
+  "version": "1.0.0",
+  "description": "Encoder Ai tools for AI agents. Capabilities: encode base64, decode base64, encode url. Built by MEOK AI Labs.",
+  "author": "MEOK AI Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/encoder-ai-mcp"
+  }
+}

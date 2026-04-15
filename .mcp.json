@@ -1,6 +1,6 @@
 {
   "name": "encoder-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs \u2014 Encoding and decoding \u2014 Base64, URL, HTML, hex, binary.",
+  "description": "Encoder Ai tools for AI agents. Capabilities: encode base64, decode base64, encode url. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
