@@ -1,6 +1,6 @@
 {
   "name": "encoder-ai-mcp",
-  "description": "encoder-ai-mcp \u2014 Built by [MEOK AI Labs](https://meok.ai)",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs \u2014 Encoding and decoding \u2014 Base64, URL, HTML, hex, binary.",
   "version": "1.0.0",
   "tools": [
     {
