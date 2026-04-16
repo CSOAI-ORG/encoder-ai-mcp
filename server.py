@@ -49,7 +49,7 @@ def decode_base64(encoded: str, api_key: str = "") -> str:
     import base64
     try:
         result["decoded"] = base64.b64decode(encoded.encode()).decode()
-    except: result["error"] = "Invalid base64"
+    except Exception as e: result["error"] = "Invalid base64"
     return result
 
 @mcp.tool()
