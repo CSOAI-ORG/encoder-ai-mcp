@@ -1,45 +1,59 @@
-[![encoder-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/encoder-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/encoder-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/encoder-ai-mcp)](https://pypi.org/project/encoder-ai-mcp/)
-
-[![encoder-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/encoder-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/encoder-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/encoder-ai-mcp)](https://github.com/CSOAI-ORG/encoder-ai-mcp/stargazers)
+# Encoder Ai MCP
 
-# uencoderU aiU mcp
+**MCP server for encoder ai mcp operations**
 
-**Encoding and decoding — Base64, URL, HTML, hex, binary. — MEOK AI Labs.**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/encoder-ai-mcp)](https://www.npmjs.com/package/@meok-ai/encoder-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-encoder-ai-mcp)](https://pypi.org/project/meok-encoder-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/encoder-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Encoder Ai MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `encode_base64` | Encode text to Base64. |
+| `decode_base64` | Decode Base64 to text. |
+| `encode_url` | URL-encode a string. |
+| `encode_html` | HTML-encode special characters. |
+| `to_hex` | Convert text to hexadecimal. |
 
 ## Installation
 
 ```bash
-pip install encoder-ai-mcp
-# or
-npm install -g @meok-ai/encoder-ai-mcp
+pip install meok-encoder-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "encoder-ai": {
+      "command": "python",
+      "args": ["-m", "meok_encoder_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/encoder-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
