@@ -2,7 +2,6 @@
 """Encoding and decoding — Base64, URL, HTML, hex, binary. — MEOK AI Labs."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json, os, re, hashlib, math
@@ -62,7 +61,7 @@ def encode_base64(text: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if err := _rl(): return err
     # Real implementation
@@ -111,7 +110,7 @@ def decode_base64(encoded: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if err := _rl(): return err
     # Real implementation
@@ -162,7 +161,7 @@ def encode_url(text: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if err := _rl(): return err
     # Real implementation
@@ -212,13 +211,22 @@ def encode_html(text: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if err := _rl(): return err
     # Real implementation
     result = {"tool": "encode_html", "input_length": len(str(locals())), "timestamp": datetime.now(timezone.utc).isoformat()}
     import base64
     import html as h
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
     result["encoded"] = h.escape(text)
     return result
 
@@ -262,7 +270,7 @@ def to_hex(text: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if err := _rl(): return err
     # Real implementation
@@ -271,5 +279,8 @@ def to_hex(text: str, api_key: str = "") -> str:
     return result
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
