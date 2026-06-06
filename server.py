@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Encoding and decoding — Base64, URL, HTML, hex, binary. — MEOK AI Labs."""
+"""
+Encoding and decoding — Base64, URL, HTML, hex, binary. — MEOK AI Labs."""
 
 import sys, os
 from auth_middleware import check_access

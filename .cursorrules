@@ -1,0 +1,9 @@
+# encoder-ai-mcp - Auto-trigger Rules
+
+When the user asks about encoder, use encoder-ai-mcp tools: encode_base64, decode_base64, encode_url, encode_html, to_hex
+
+**MCP server for encoder ai mcp operations**
+
+Install: `pip install encoder-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

@@ -1,0 +1,28 @@
+{
+  "name": "encoder-ai-mcp",
+  "title": "Encoder Ai Mcp",
+  "description": "Encoder Ai tools for AI agents. Capabilities: encode base64, decode base64, encode url. Built by MEOK AI Labs.",
+  "version": "1.0.7",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "encode_base64"
+    },
+    {
+      "name": "decode_base64"
+    },
+    {
+      "name": "encode_url"
+    },
+    {
+      "name": "encode_html"
+    },
+    {
+      "name": "to_hex"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# encoder-ai-mcp
+# **MCP server for encoder ai mcp operations**
+
+## Install
+```bash
+pip install encoder-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `encode_base64`
+Encode text to Base64.
+
+### `decode_base64`
+Decode Base64 to text.
+
+### `encode_url`
+URL-encode a string.
+
+### `encode_html`
+HTML-encode special characters.
+
+### `to_hex`
+Convert text to hexadecimal.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
