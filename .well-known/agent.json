@@ -1,0 +1,68 @@
+{
+  "name": "encoder-ai-mcp",
+  "description": "Encoder Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/encoder-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "encode_base64",
+      "name": "Encode Base64",
+      "description": "encode_base64 via encoder-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "decode_base64",
+      "name": "Decode Base64",
+      "description": "decode_base64 via encoder-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "encode_url",
+      "name": "Encode Url",
+      "description": "encode_url via encoder-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "encode_html",
+      "name": "Encode Html",
+      "description": "encode_html via encoder-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "to_hex",
+      "name": "To Hex",
+      "description": "to_hex via encoder-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

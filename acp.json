@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "encoder-ai-mcp",
+    "description": "Encoder Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "encoder-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "encode_base64",
+      "decode_base64",
+      "encode_url",
+      "encode_html",
+      "to_hex"
+    ]
+  }
+}
