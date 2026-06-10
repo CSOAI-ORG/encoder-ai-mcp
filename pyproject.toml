@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "encoder-ai-mcp"
-version = "1.0.7"
+version = "1.0.10"
 readme = "README.md"
 description = "Encoder Ai tools for AI agents. Capabilities: encode base64, decode base64, encode url. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
